@@ -1,0 +1,5 @@
+actions_path '../fastlane/actions'
+
+lane :appbundle do
+    build_flutter_appbundle
+end
