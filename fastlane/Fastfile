@@ -3,3 +3,8 @@ actions_path '../fastlane/actions'
 lane :appbundle do
     build_flutter_appbundle
 end
+
+lane :playstore_beta do
+    appbundle
+    upload_to_playstore(track: "beta")
+end

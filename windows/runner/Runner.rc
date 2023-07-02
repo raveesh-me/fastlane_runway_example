@@ -89,11 +89,11 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.example" "\0"
+            VALUE "CompanyName", "com.examples" "\0"
             VALUE "FileDescription", "fastlane_runway_example" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "fastlane_runway_example" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2023 com.example. All rights reserved." "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2023 com.examples. All rights reserved." "\0"
             VALUE "OriginalFilename", "fastlane_runway_example.exe" "\0"
             VALUE "ProductName", "fastlane_runway_example" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"

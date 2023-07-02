@@ -1,4 +1,4 @@
-package com.example.fastlane_runway_example
+package com.examples.fastlane_runway_example
 
 import io.flutter.embedding.android.FlutterActivity
 
