@@ -8,11 +8,27 @@ lane :internal_play_store do
     appbundle
     upload_to_play_store(
         track: 'internal',
-        release_status: 'draft',
         skip_upload_metadata: true,
         skip_upload_images: true,
         skip_upload_screenshots: true,
         skip_upload_changelogs: true,
         aab: 'build/app/outputs/bundle/release/app-release.aab'
+    )
+end
+
+lane :testflight_ios do
+    self.runner.current_platform = :ios
+    # sh("flutter build ipa")
+    upload_to_testflight(
+        apple_id: "6450833964",
+        ipa: "build/ios/ipa/fastlane_runway_example.ipa",
+        app_identifier: "com.example.fastlaneRunwayExample",
+        app_platform: "ios",
+        skip_waiting_for_build_processing: true, 
+        api_key: {
+            key_id: "T635K8QNC5",
+            issuer_id: "1596343a-2cc1-446d-bf8d-f349944dce1e",
+            key_filepath: "fastlane/FASTLANE_AuthKey_T635K8QNC5.p8"
+        }
     )
 end
