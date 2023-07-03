@@ -5,7 +5,17 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: build_flutter_appbundle" time="7.136988">
+      <testcase classname="fastlane.lanes" name="0: Switch to appbundle lane" time="0.000156">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="1: build_flutter_appbundle" time="1.655158">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="2: upload_to_play_store" time="32.608102">
         
       </testcase>
     

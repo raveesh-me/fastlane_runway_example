@@ -4,7 +4,15 @@ lane :appbundle do
     build_flutter_appbundle
 end
 
-lane :playstore_beta do
+lane :internal_play_store do
     appbundle
-    upload_to_playstore(track: "beta")
+    upload_to_play_store(
+        track: 'internal',
+        release_status: 'draft',
+        skip_upload_metadata: true,
+        skip_upload_images: true,
+        skip_upload_screenshots: true,
+        skip_upload_changelogs: true,
+        aab: 'build/app/outputs/bundle/release/app-release.aab'
+    )
 end

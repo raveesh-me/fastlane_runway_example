@@ -21,10 +21,10 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 
 
-### playstore_beta
+### internal_play_store
 
 ```sh
-[bundle exec] fastlane playstore_beta
+[bundle exec] fastlane internal_play_store
 ```
 
 
