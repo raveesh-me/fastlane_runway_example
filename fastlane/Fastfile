@@ -4,33 +4,41 @@ private_lane :appbundle do
     build_flutter_appbundle
 end
 
-platform :android do
-    lane :internal do
-        appbundle
-        upload_to_play_store(
-            track: 'internal',
-            skip_upload_metadata: true,
-            skip_upload_images: true,
-            skip_upload_screenshots: true,
-            skip_upload_changelogs: true,
-            aab: 'build/app/outputs/bundle/release/app-release.aab'
-        )
-    end
+lane :android_internal do
+    appbundle
+    upload_to_play_store(
+        track: 'internal',
+        skip_upload_metadata: true,
+        skip_upload_images: true,
+        skip_upload_screenshots: true,
+        skip_upload_changelogs: true,
+        aab: 'build/app/outputs/bundle/release/app-release.aab'
+    )
 end
 
-platform :ios do
-    lane :beta do
-        sh("flutter build ipa")
-        api_key = app_store_connect_api_key(
-            key_id: "T635K8QNC5",
-            issuer_id: "1596343a-2cc1-446d-bf8d-f349944dce1e",
-            key_filepath: "fastlane/FASTLANE_AuthKey_T635K8QNC5.p8",
-            duration: 1200, # optional (maximum 1200)
-            in_house: false # optional but may be required if using match/sigh
-        )
-        upload_to_testflight(
-            ipa: "build/ios/ipa/fastlane_runway_example.ipa",
-            api_key: api_key
-        )
+lane :ios_beta do
+    sh("flutter build ipa")
+    api_key = app_store_connect_api_key(
+        key_id: "T635K8QNC5",
+        issuer_id: "1596343a-2cc1-446d-bf8d-f349944dce1e",
+        key_filepath: "fastlane/FASTLANE_AuthKey_T635K8QNC5.p8",
+        duration: 1200, # optional (maximum 1200)
+        in_house: false # optional but may be required if using match/sigh
+    )
+    upload_to_testflight(
+        ipa: "build/ios/ipa/fastlane_runway_example.ipa",
+        api_key: api_key
+    )
+end
+
+private_lane :flutter_test do
+    sh("flutter test .")
+end
+
+platform :flutter do
+    lane :beta do 
+        flutter_test
+        android_internal
+        ios_beta
     end
 end

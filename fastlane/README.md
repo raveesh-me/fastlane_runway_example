@@ -13,18 +13,18 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 # Available Actions
 
-### appbundle
+### android_internal
 
 ```sh
-[bundle exec] fastlane appbundle
+[bundle exec] fastlane android_internal
 ```
 
 
 
-### internal_play_store
+### ios_beta
 
 ```sh
-[bundle exec] fastlane internal_play_store
+[bundle exec] fastlane ios_beta
 ```
 
 
@@ -32,12 +32,12 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 ----
 
 
-## iOS
+## flutter
 
-### ios testflight_ios
+### flutter beta
 
 ```sh
-[bundle exec] fastlane ios testflight_ios
+[bundle exec] fastlane flutter beta
 ```
 
 

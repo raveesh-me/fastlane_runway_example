@@ -1,10 +1,8 @@
 json_key_file("fastlane/pc-api-8677857638243019371-434-8008835c2352.json")
 package_name("com.examples.fastlane_runway_example")
 
-for_platform :ios do
-    app_identifier("com.example.fastlaneRunwayExample") # The bundle identifier of your app
-    apple_id("raveeshr503@gmail.com") # Your Apple Developer Portal username
+app_identifier("com.example.fastlaneRunwayExample") # The bundle identifier of your app
+apple_id("raveeshr503@gmail.com") # Your Apple Developer Portal username
 
-    itc_team_id("119604375") # App Store Connect Team ID
-    team_id("BP6BMD5Q26") # Developer Portal Team ID
-end
+itc_team_id("119604375") # App Store Connect Team ID
+team_id("BP6BMD5Q26") # Developer Portal Team ID
