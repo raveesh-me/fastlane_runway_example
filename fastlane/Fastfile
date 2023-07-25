@@ -4,7 +4,7 @@ private_lane :appbundle do
     build_flutter_appbundle
 end
 
-lane :android_internal do
+private_lane :android_internal do
     appbundle
     upload_to_play_store(
         track: 'internal',
@@ -16,7 +16,7 @@ lane :android_internal do
     )
 end
 
-lane :ios_beta do
+private_lane :ios_beta do
     sh("flutter build ipa")
     api_key = app_store_connect_api_key(
         key_id: "T635K8QNC5",
